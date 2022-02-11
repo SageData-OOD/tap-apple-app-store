@@ -36,11 +36,11 @@ def create_metadata_for_report(schema, tap_stream_id):
     key_properties = get_key_properties(tap_stream_id)
 
     mdata = [{"breadcrumb": [], "metadata": {"inclusion": "available", "forced-replication-method": "FULL_TABLE",
-                                             "table-key-properties": key_properties, "selected": True}}]
+                                             "table-key-properties": key_properties}}]
 
     for key in schema.properties:
         inclusion = "automatic" if key in key_properties else "available"
-        mdata.append({"breadcrumb": ["properties", key], "metadata": {"inclusion": inclusion, "selected": True}})
+        mdata.append({"breadcrumb": ["properties", key], "metadata": {"inclusion": inclusion}})
 
     return mdata
 
@@ -137,12 +137,4 @@ def main():
 
 
 if __name__ == "__main__":
-    con = {
-        # "start_date": "2022-02-01",
-        "country_code": "us",
-        "how_many": 150,
-        "list_app_name": ["minecraft", "spotify"]
-    }
-    catalog = discover()
-    sync(con, {}, catalog)
-
+    main()
