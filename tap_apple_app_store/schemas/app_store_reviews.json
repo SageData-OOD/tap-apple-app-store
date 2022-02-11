@@ -1,0 +1,35 @@
+{
+  "type": ["null", "object"],
+  "additionalProperties": false,
+  "properties": {
+    "app_id": {
+      "type": ["null", "string"]
+    },
+    "app_name": {
+      "type": ["null", "string"]
+    },
+    "date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "country": {
+      "type": ["null", "string"]
+    },
+    "userName": {
+      "type": ["null", "string"]
+    },
+    "title": {
+      "type": ["null", "string"]
+    },
+    "rating": {
+      "type": ["null", "integer"]
+    },
+    "isEdited": {
+      "type": ["null", "boolean"]
+    },
+    "review": {
+      "type": ["null", "string"]
+    }
+  }
+}
+
